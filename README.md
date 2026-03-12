@@ -1,38 +1,71 @@
-# project-dio-aws
-Projeto de arquitetura Cloud focado na redução de custos para o setor farmacêutico. A solução utiliza AWS Lambda e S3 Intelligent-Tiering para otimizar o fluxo de caixa, convertendo CAPEX em OPEX e reduzindo o custo marginal. Inclui governança via AWS Budgets para controle rigoroso de EBITDA e viabilidade econômica. Relatório no GitHub.
+# Redução de Custos com AWS – Abstergo Pharma
 
-# RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS
+Projeto de implementação de serviços AWS com foco em **redução de custos operacionais imediatos**.
 
-**Data:** 12 de Março de 2026  
 **Empresa:** Abstergo Industries (Pharma Division)  
-**Responsável:** Alice Ramos Saar
+**Responsável:** Alice Ramos Saar  
+**Data:** 12 de Março de 2026
 
-## Introdução
-Este relatório apresenta o processo de implementação de ferramentas na empresa Abstergo Pharma, realizado por Alice Ramos Saar. O objetivo do projeto foi elencar 3 serviços AWS com a finalidade de realizar a diminuição de custos imediatos e otimização do fluxo de caixa operacional.
+---
 
-## Descrição do Projeto
-O projeto de implementação foi dividido em 3 etapas estratégicas:
+## Serviços Implementados
 
-### Etapa 1: 
-- **Ferramenta:** Amazon S3 (Intelligent-Tiering)
-- **Foco:** Otimização de armazenamento de dados frios.
-- **Caso de Uso:** Armazenamento de receitas médicas digitalizadas. A ferramenta move automaticamente dados pouco acessados para camadas de custo reduzido, gerando economia imediata sem necessidade de gestão manual.
+| Serviço | Objetivo |
+|---------|----------|
+| Amazon S3 (Intelligent-Tiering) | Armazenamento inteligente de documentos clínicos |
+| AWS Lambda | Processamento serverless de eventos transacionais |
+| AWS Budgets | Governança financeira e alertas de gastos |
 
-### Etapa 2: 
-- **Ferramenta:** AWS Lambda (Serverless)
-- **Foco:** Eliminação de custos fixos com servidores ociosos.
-- **Caso de Uso:** Processamento de transações e fechamento de caixa. Ao contrário de um servidor ligado 24/7, a cobrança ocorre apenas nos milissegundos de execução das vendas, otimizando o EBITDA da operação.
+---
 
-### Etapa 3: 
-- **Ferramenta:** AWS Budgets
-- **Foco:** Governança e controle financeiro (FinOps).
-- **Caso de Uso:** Monitoramento de gastos em tempo real com alertas automáticos ao atingir 80% do orçamento planejado, garantindo previsibilidade e evitando surpresas na fatura mensal.
+## Arquitetura da Solução
 
-## Conclusão
-A implementação das ferramentas na Abstergo Pharma tem como esperado a redução significativa de despesas operacionais (OPEX) e a eliminação da necessidade de novos investimentos em hardware (CAPEX). Isso aumentará a eficiência, a escalabilidade marginal da rede e a segurança dos dados sensíveis da empresa.
+```
+Sistema de vendas / usuário
+        ↓
+     AWS Lambda
+ (processamento serverless)
+        ↓
+   Amazon S3
+ (armazenamento escalável)
+        ↓
+   AWS Budgets
+ (controle de custos)
+```
 
-## Anexos
-- Tabela de Viabilidade Econômica (On-Premise vs Cloud)
-- Arquitetura lógica do projeto (Serverless & Storage)
+- **AWS Lambda** — processa eventos sem necessidade de servidores permanentes
+- **Amazon S3** — armazena documentos com camadas automáticas de custo
+- **AWS Budgets** — monitora gastos e emite alertas ao atingir 80% do orçamento
 
-**Assinatura do Responsável pelo Projeto:** Alice Ramos Saar
+---
+
+## Impacto Esperado
+
+- Redução de até **40% nos custos de armazenamento**
+- **Eliminação de servidores ociosos** com arquitetura serverless
+- **Previsibilidade financeira** com monitoramento contínuo de gastos
+
+---
+
+## Estrutura do Repositório
+
+```
+aws-cost-reduction-project/
+│
+├── README.md
+├── relatorio-implementacao-aws.md
+│
+└── docs/
+    ├── viabilidade.md
+    ├── arquitetura.md
+    └── referencias.md
+```
+
+---
+
+## Documentação
+
+- [Relatório Completo](./relatorio-implementacao-aws.md)
+- [Viabilidade Econômica](./docs/viabilidade.md)
+- [Arquitetura do Projeto](./docs/arquitetura.md)
+- [Referências AWS](./docs/referencias.md)
